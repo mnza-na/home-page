@@ -1,19 +1,70 @@
-body{
-    margin: 0;
-    background-color: #deedfc;
+:root{
+    --pallete-color-1: #6da5da;
+    --pallete-color-2: #dae7f0;
+    --pallete-color-3: #dcff40;
+    --pallete-color-4: #f3fd9a;
+    --pallete-color-5: #74b6f3;
+    --font-pallete-color-1: #d4d4d4;
+    --font-pallete-color-2: #a0a0a0;
+    --font-pallete-color-3: #3f3f3f;
 }
 
-.HeadBar{
-    background-color: #7ec2f0; 
+body{
+    background-color: var(--pallete-color-1);
+    margin: 0;
+
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--font-pallete-color-2);
+    outline: 1px solid var(--font-pallete-color-1);
+    border-radius: 5px;
+}
+
+.head{
+    margin-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.content{
+    position: fixed;
+    background-color: var(--pallete-color-2);
+    top: 44px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+
+.container{
+    position: fixed;
+    background-color: var(--pallete-color-5);
+    top: 59px;
+    left: 15px;
+    bottom: 10px;
+    right: 15px;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.bar{
     margin: 0;
     padding: 10px;
-    width: 100%; 
     height: min-content;
 }
 
-.Menu{
+.menu{
     background-image: url("./assets/icons/menu.svg");
     background-size: cover;
+    cursor: pointer;
     width: 24px; 
     height: 24px;
 }
@@ -21,54 +72,66 @@ body{
     background-image: url("./assets/icons/menu_open.svg");
 }
 
-.MenuOpen{
-    background-color: rgb(228, 228, 228);
-    position: absolute;
+.menu-list{
+    position: fixed;
+    background-color: var(--font-pallete-color-1);
+    top: 44px;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    border-radius: 0 0 5px 0;
 }
 
-.ItemGroup{
+.list{
     padding-left: 10px;
     height: min-content;
 }
 
-.Item{
+.item{
     padding: 10px;
-    font-size: medium;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-    color: rgb(36, 36, 36);
+    color: var(--font-pallete-color-3);
     cursor: pointer;
 }
-.Item:hover{
-    background-color: rgb(209, 209, 209);
+.item:hover{
+    background-color: var(--font-pallete-color-2);
 }
 
-.CardContent{
+.card-container{
     text-align: center;
 }
 
-.Card{
+.card{
     display: inline-block;
+    background-color: var(--pallete-color-4);
     margin: 20px;
     padding: 5px 0 5px 0;
-    width: 30%;
+    width: 25%;
+    min-width: 150px;
     height: min-content;
-    background-color: rgb(230, 240, 92);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #3f3f3f;
+    color: var(--font-pallete-color-3);
 }
 
-.CardHeader{
+.card-header{
     margin: 5px 0 5px 0;
-    padding: 10px;
-    background-color: rgb(153, 153, 153);
+    padding: 5px;
+    font-size: 11px;
+    background-color: var(--pallete-color-3);
 }
 
-.CardImage{
+.card-image{
     margin: 5px 0 5px 0;
-    background-color: rgb(153, 153, 153);
+    background-color: var(--pallete-color-3);
+}
+img.card-image{
+    max-height: 100px;
+    max-width: 100px;
 }
 
-.CardDescription{
+.card-description{
     margin: 5px 0 5px 0;
-    padding: 10px;
-    background-color: rgb(153, 153, 153);
+    padding: 5px;
+    font-size: 9px;
+    background-color: var(--pallete-color-3);
 }

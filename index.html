@@ -1,37 +1,66 @@
 <html>
+
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
+
   <body>
-    <div class="HeadBar">
-      <div class="Menu" id="menu"></div>
-      <div class="MenuOpen ItemGroup" id="menu_open" hidden>
-        <div class="Item" id="projects">Proyects</div>
-        <div class="ItemGroup" id="project_list" hidden>
-          <div class="Item"><a href="">Home-Page</a></div>
+
+    <div class="head bar">
+
+      <div>
+        <div class="menu" id="menu"></div>
+        <div class="menu-list list" id="menu_list" hidden>
+
+          <div class="item" id="projects">Proyects</div>
+          <div class="list" id="project_list" hidden>
+
+            <div class="item">Home Page</div>
+
+          </div>
+
+          <div class="item" onclick="location.href = './about-page/index.html'">About Page</div>
+
         </div>
-        <div class="Item"><a href="./about-page.html">About Page</a></div>
-        <div class="Item"><a href="./about-me.html">About Me</a></div>
       </div>
+
     </div>
 
-    <div class="CardContent">
-      <div class="Card">
-        <div class="CardHeader">Home Page</div>
-        <div class="CardImage">
-          <img 
-          src="./assets/images/home-page.logo.png" 
-          alt="./assets/image-not-found.png">
+    <div class="content">
+
+      <div class="container">
+        
+        <div class="card-container">
+
+          <div class="card">
+            <div class="card-header">Home Page</div>
+            <div class="card-image">
+              <img
+              src="./assets/images/home-page.logo.png" 
+              alt="./assets/image-not-found.png">
+            </div>
+            <div class="card-description">
+              <p>
+                This page is the first project, the idea is save the making process specifying documentation and version images.
+              </p>
+            </div>
+          </div>
+
         </div>
-        <div class="CardDescription">
-          <p>
-            this page
-          </p>
-        </div>
+
       </div>
+
     </div>
+
   </body>
 </html>
+
+<script>
+  lists = [
+    {tittleId: "menu", listId: "menu_list"},
+    {tittleId: "projects", listId: "project_list"}
+  ]
+</script>
 
 <script type="text/javascript">
   function createListGroup(headerId, listId) {
@@ -51,6 +80,6 @@
 </script>
 
 <script type="text/javascript">
-  createListGroup("menu", "menu_open");
-  createListGroup("projects", "project_list");
+  for(list of lists)
+    createListGroup(list.tittleId, list.listId);
 </script>
