@@ -1,12 +1,14 @@
 :root{
-    --pallete-color-1: #6da5da;
-    --pallete-color-2: #dae7f0;
-    --pallete-color-3: #dcff40;
-    --pallete-color-4: #f3fd9a;
-    --pallete-color-5: #74b6f3;
+    --pallete-color-1: #1fa8f7;
+    --pallete-color-2: #4bbdff;
+    --pallete-color-3: #95d8ff;
+    --pallete-color-4: #5f8ca7;
+    --pallete-color-5: #b8d7f3;
+    --pallete-color-6: #e9f1f8;
     --font-pallete-color-1: #d4d4d4;
     --font-pallete-color-2: #a0a0a0;
-    --font-pallete-color-3: #3f3f3f;
+    --font-pallete-color-3: #646464;
+    --font-pallete-color-4: #3f3f3f;
 }
 
 body{
@@ -58,6 +60,49 @@ body{
 .bar{
     margin: 0;
     padding: 10px;
+    height: min-content;
+}
+
+.protruding{
+    background-color: var(--pallete-color-3);/*
+    border-top: 1px solid var(--pallete-color-4);
+    border-right: 1px solid var(--pallete-color-4);*/
+    border-left: 3px solid var(--pallete-color-4);
+    border-bottom: 3px solid var(--pallete-color-4);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.sunken{
+    background-color: var(--pallete-color-3);/*
+    border-top: 1px solid var(--pallete-color-4);*/
+    border-right: 3px solid var(--pallete-color-4);/*
+    border-left: 1px solid var(--pallete-color-4);*/
+    border-bottom: 3px solid var(--pallete-color-4);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Opera and Firefox */
+}
+
+.width-half{
+    display: inline-block;
+    width: 30%;
+}
+
+.width-max{
+    width: 100%;
+}
+
+.height-min-content{
     height: min-content;
 }
 
@@ -134,4 +179,40 @@ img.card-image{
     padding: 5px;
     font-size: 9px;
     background-color: var(--pallete-color-3);
+}
+
+.little-card{
+    background-color: var(--pallete-color-1);
+    border-top: 1px solid var(--pallete-color-4);
+    border-bottom: 1px solid var(--pallete-color-4);
+    padding: 3px 0 3px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: min-content;
+}
+
+.little-card-tittle{
+    font-size: 10px;
+}
+
+.little-card-description{
+    font-size: 8px;
+}
+
+.label{
+    background-color: var(--pallete-color-1);
+    padding: 3px 0 3px 0;
+    border-top: 1px solid var(--pallete-color-4);
+    border-bottom: 1px solid var(--pallete-color-4);
+    width: 100%;
+    height: min-content;
+}
+
+.label-tittle{
+    font-size: 11px;
+}
+
+.label-description{
+    font-size: 9px;
 }

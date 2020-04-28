@@ -2,6 +2,10 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="./src/projects.js"></script>
+    <script type="text/javascript" src="./src/inPlanning.js"></script>
+    <script type="text/javascript" src="./src/workInProgress.js"></script>
+    <script type="text/javascript" src="./src/inMaintenance.js"></script>
   </head>
 
   <body>
@@ -9,17 +13,17 @@
     <div class="head bar">
 
       <div>
-        <div class="menu" id="menu"></div>
+        <div class="menu no-select" id="menu"></div>
         <div class="menu-list list" id="menu_list" hidden>
 
-          <div class="item" id="projects">Proyects</div>
+          <div class="item no-select" id="projects">Proyects</div>
           <div class="list" id="project_list" hidden>
 
-            <div class="item">Home Page</div>
+            <div class="item no-select">Home Page</div>
 
           </div>
 
-          <div class="item" onclick="location.href = './about-page/index.html'">About Page</div>
+          <div class="item no-select" onclick="location.href = './about-page/index.html'">About Page</div>
 
         </div>
       </div>
@@ -28,22 +32,43 @@
 
     <div class="content">
 
+
       <div class="container">
         
-        <div class="card-container">
+        <div class="sunken width-half heigth-min-content" id="work-in-progress">
 
-          <div class="card">
-            <div class="card-header">Home Page</div>
-            <div class="card-image">
-              <img
-              src="./assets/images/home-page.logo.png" 
-              alt="./assets/image-not-found.png">
+          <!--div class="little-card">
+            <div class="little-card-tittle">Some tittle</div>
+            <div class="little-card-description">some description</div>
+          </div-->
+
+        </div>
+        <div class="protruding width-half heigth-min-content" style="padding-top: 5px; padding-bottom: 5px;" id="in-planning">
+          
+          <!--div class="label">
+            <div class="label-tittle">Some tittle</div>
+            <div class="label-description">some description</div>
+          </div-->
+
+        </div>
+        <div class="wight-max heigth-min-content">
+          
+          <div class="card-container">
+
+            <div class="card">
+              <div class="card-header">Home Page</div>
+              <div class="card-image">
+                <img
+                src="./assets/images/home-page.logo.png" 
+                alt="./assets/image-not-found.png">
+              </div>
+              <div class="card-description">
+                <p>
+                  This page is the first project, the idea is save the making process specifying documentation and version images.
+                </p>
+              </div>
             </div>
-            <div class="card-description">
-              <p>
-                This page is the first project, the idea is save the making process specifying documentation and version images.
-              </p>
-            </div>
+  
           </div>
 
         </div>
@@ -59,7 +84,7 @@
   lists = [
     {tittleId: "menu", listId: "menu_list"},
     {tittleId: "projects", listId: "project_list"}
-  ]
+  ];
 </script>
 
 <script type="text/javascript">
@@ -77,9 +102,55 @@
       }
     );
   }
+  function createCard(project){}
+  function createLittleCard(project){
+    if(project.name){
+      littleCard = document.createElement("div");
+      littleCard.className = "little-card";
+      littleCard.innerHTML = project.name;
+      tittle = document.createElement("div");
+      tittle.className = "little-card-tittle";
+      littleCard.appendChild(tittle);
+      if(project.description){
+        description = document.createElement("div");
+        description.className = "little-card-description";
+        description.innerHTML = project.description;
+        littleCard.appendChild(description);
+      }
+      return littleCard;
+    }
+  }
+  function createLabel(project){
+    if(project.name){
+      label = document.createElement("div");
+      label.className = "label";
+      label.innerHTML = project.name;
+      tittle = document.createElement("div");
+      tittle.className = "label-tittle";
+      label.appendChild(tittle);
+      if(project.description){
+        description = document.createElement("div");
+        description.className = "label-description";
+        description.innerHTML = project.description;
+        label.appendChild(description);
+      }
+      return label;
+    }
+  }
 </script>
 
 <script type="text/javascript">
   for(list of lists)
     createListGroup(list.tittleId, list.listId);
+
+    inPlanning = document.getElementById("in-planning");
+  for( project of planning){
+    label = createLabel(projects[project]);
+    inPlanning.appendChild(label);
+  }
+  wip = document.getElementById("work-in-progress");
+  for( project of workInProgress){
+    littleCard = createLittleCard(projects[project]);
+    wip.appendChild(littleCard);
+  }
 </script>
