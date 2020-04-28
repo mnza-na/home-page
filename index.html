@@ -17,11 +17,7 @@
         <div class="menu-list list" id="menu_list" hidden>
 
           <div class="item no-select" id="projects">Proyects</div>
-          <div class="list" id="project_list" hidden>
-
-            <div class="item no-select">Home Page</div>
-
-          </div>
+          <div class="list" id="project_list" hidden></div>
 
           <div class="item no-select" onclick="location.href = './about-page/index.html'">About Page</div>
 
@@ -32,45 +28,23 @@
 
     <div class="content">
 
-
       <div class="container">
         
-        <div class="sunken width-half heigth-min-content" id="work-in-progress">
-
-          <!--div class="little-card">
-            <div class="little-card-tittle">Some tittle</div>
-            <div class="little-card-description">some description</div>
-          </div-->
-
+        <div class="sunken width-half heigth-min-content">
+          <h4>Work in progress</h4>
+          <div id="work-in-progress"></div>
         </div>
-        <div class="protruding width-half heigth-min-content" style="padding-top: 5px; padding-bottom: 5px;" id="in-planning">
-          
-          <!--div class="label">
-            <div class="label-tittle">Some tittle</div>
-            <div class="label-description">some description</div>
-          </div-->
 
+        
+        <div class="protruding width-half heigth-min-content">
+          <h4>For the future</h4>
+          <div style="padding-top: 5px; padding-bottom: 5px;" id="in-planning"></div>
         </div>
-        <div class="wight-max heigth-min-content">
-          
-          <div class="card-container">
-
-            <div class="card">
-              <div class="card-header">Home Page</div>
-              <div class="card-image">
-                <img
-                src="./assets/images/home-page.logo.png" 
-                alt="./assets/image-not-found.png">
-              </div>
-              <div class="card-description">
-                <p>
-                  This page is the first project, the idea is save the making process specifying documentation and version images.
-                </p>
-              </div>
-            </div>
-  
-          </div>
-
+        
+        
+        <div class="wight-max heigth-min-content card-container">
+          <h4>Finished and in maintenance</h4>
+          <div id="in-maintenance"></div>
         </div>
 
       </div>
@@ -81,6 +55,12 @@
 </html>
 
 <script>
+  /*
+  There are list in the page, menu and projects are the minimal list that need 
+  the page if you remove someone it throw error, add all list you want. It 
+  function dont create the item in page, anly add the functionality to show a 
+  list pressing a specific element.
+  */ 
   lists = [
     {tittleId: "menu", listId: "menu_list"},
     {tittleId: "projects", listId: "project_list"}
@@ -102,7 +82,30 @@
       }
     );
   }
-  function createCard(project){}
+  function createCard(project){
+    if(project.name && project.img && project.url && project.description)
+      return undefined;
+
+    card = document.createElement("div");
+    card.className = "card";
+
+    tittle = document.createElement("div");
+    tittle.className = "card-header";
+    tittle.innerHTML = project.name;
+    imgContent = document.createElement("div");
+    imgContent.className = "card-image";
+    img = document.createElement("img");
+    img.src = project["img-src"];
+    imgContent.appendChild(img);
+    description = document.createElement("div");
+    description.className = "card-description";
+    description.innerHTML = `<p>${project.description}</p>`;
+    card.appendChild(tittle);
+    card.appendChild(imgContent);
+    card.appendChild(description);
+    card.onclick = () => location.href = project.url;
+    return card;
+  }
   function createLittleCard(project){
     if(project.name){
       littleCard = document.createElement("div");
@@ -137,20 +140,44 @@
       return label;
     }
   }
+  function createItem(item){
+    if(item.url){
+      divItem = document.createElement("div");
+      divItem.className = "item no-select";
+      divItem.onclick = () => location.href = item.url;
+      divItem.innerHTML = item.name;
+      return divItem;
+    }
+  }
 </script>
 
 <script type="text/javascript">
   for(list of lists)
     createListGroup(list.tittleId, list.listId);
 
-    inPlanning = document.getElementById("in-planning");
+  projectList = document.getElementById("project_list");
+  for ( project of allProjects ){
+    ref = createItem(projects[project]);
+    if(ref)
+      projectList.appendChild(ref);
+  }
+
+  inPlanning = document.getElementById("in-planning");
   for( project of planning){
     label = createLabel(projects[project]);
-    inPlanning.appendChild(label);
+    if(label)
+      inPlanning.appendChild(label);
   }
   wip = document.getElementById("work-in-progress");
   for( project of workInProgress){
     littleCard = createLittleCard(projects[project]);
-    wip.appendChild(littleCard);
+    if(littleCard)
+      wip.appendChild(littleCard);
+  }
+  inMaintenance = document.getElementById("in-maintenance");
+  for( project of maintenance ){
+    card = createCard(projects[project]);
+    if(card)
+      inMaintenance.appendChild(card);
   }
 </script>
