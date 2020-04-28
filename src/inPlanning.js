@@ -1,4 +1,4 @@
 const planning = [
-    "home-page",
-    "home-page"
+    "router",
+    "child-activities"
 ]

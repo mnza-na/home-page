@@ -42,7 +42,7 @@
         </div>
         
         
-        <div class="wight-max heigth-min-content card-container">
+        <div class="sunken wight-max heigth-min-content card-container">
           <h4>Finished and in maintenance</h4>
           <div id="in-maintenance"></div>
         </div>
@@ -163,18 +163,26 @@
   }
 
   inPlanning = document.getElementById("in-planning");
+  if(planning.length == 0)
+    inPlanning.innerHTML += "You aren't planning D:";
   for( project of planning){
     label = createLabel(projects[project]);
     if(label)
       inPlanning.appendChild(label);
   }
+
   wip = document.getElementById("work-in-progress");
+  if(workInProgress.length == 0)
+    wip.innerHTML += "You aren't working D:<";
   for( project of workInProgress){
     littleCard = createLittleCard(projects[project]);
     if(littleCard)
       wip.appendChild(littleCard);
   }
+  
   inMaintenance = document.getElementById("in-maintenance");
+  if(maintenance.length == 0)
+    inMaintenance.innerHTML += "Nothink yet :c";
   for( project of maintenance ){
     card = createCard(projects[project]);
     if(card)
