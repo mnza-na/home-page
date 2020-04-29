@@ -5,7 +5,7 @@ const projects = {
         "img-src": "./assets/images/home-page.logo.png",
         "objectives": "",
         "date": "",
-        "url": "./home-page/index.js"
+        "url": "C:/Users/Edith/Documents/Projects/home-page/home-page/home-page/index.html"
     },
     "router": {
         "name": "Router",

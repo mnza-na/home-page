@@ -64,6 +64,16 @@ body{
     height: min-content;
 }
 
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Opera and Firefox */
+}
+
 .protruding{
     background-color: var(--pallete-color-3);/*
     border-top: 1px solid var(--pallete-color-4);
@@ -84,16 +94,6 @@ body{
     box-shadow: 0 4px 8px 0 var(--pallete-color-4);
     margin: 5px;
     border-radius: 5px;
-}
-
-.no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-    supported by Chrome, Opera and Firefox */
 }
 
 .width-half{

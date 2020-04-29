@@ -1,34 +1,119 @@
 <html>
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script type="text/javascript" src="../src/projects.js"></script>
+
+    </head>
+
     <body>
-        <p>
-            <b>
-                This page is no util for de regula user it's only usefull for the creator,
-                if you enter to want know anyone about some product or module please go to it page.
-            </b>
-        </p>
-        <p>
-            Now a message by creator to creator, don't fail you, make it for you only for you remember it all day and you
-            never will lose the road.
-            In some time when you grow up, will read it you remember and refactor all with you new knowledge, in fact
-            you will correct this inglish text and will time to close the page or minimal change it state to finish, good look :).
-        </p>
-        <h3>
-            What is this page?
-        </h3>
-        <h3>
-            What it contain?
-        </h3>
-        <h3>
-            Why you create it?
-        </h3>
-        <h3>
-            Who is your aims?
-        </h3>
-        <h3>
-            Finish time?
-        </h3>
-        <h3>
-            Why you need this page?
-        </h3>
+
+        <div class="head bar">
+
+            <div>
+                <div class="menu no-select" id="menu"></div>
+                    <div class="menu-list list" id="menu_list" hidden>
+            
+                        <div class="item no-select" id="projects">Proyects</div>
+                        <div class="list" id="project_list" hidden></div>
+                        <div class="item no-select" onclick="location.href = './index.html'">About Page</div>
+            
+                </div>
+            </div>
+    
+        </div>
+  
+        <div class="content">
+    
+            <div class="container">
+
+                <p>
+                    <b>
+                        This page is no util for de regula user it's only usefull for the creator,
+                        if you enter to want know anyone about some product or module please go to it page.
+                    </b>
+                </p>
+                <p>
+                    Now a message by creator to creator, don't fail you, make it for you only for you remember it all day and you
+                    never will lose the road.
+                    In some time when you grow up, will read it you remember and refactor all with you new knowledge, in fact
+                    you will correct this inglish text and will time to close the page or minimal change it state to finish, good look :).
+                </p>
+                <h3>
+                    What is this page?
+                </h3>
+                <h3>
+                    What it contain?
+                </h3>
+                <h3>
+                    Why you create it?
+                </h3>
+                <h3>
+                    Who is your aims?
+                </h3>
+                <h3>
+                    Finish time?
+                </h3>
+                <h3>
+                    Why you need this page?
+                </h3>
+    
+            </div>
+    
+        </div>
+        
     </body>
 </html>
+
+<script>
+    /*
+    There are list in the page, menu and projects are the minimal list that need 
+    the page if you remove someone it throw error, add all list you want. It 
+    function dont create the item in page, anly add the functionality to show a 
+    list pressing a specific element.
+    */ 
+    lists = [
+        {tittleId: "menu", listId: "menu_list"},
+        {tittleId: "projects", listId: "project_list"}
+    ];
+</script>
+
+<script>
+    function createListGroup(headerId, listId) {
+    document.getElementById(headerId).addEventListener(
+        "click",
+        function(event){
+            list = document.getElementById(listId);
+
+            if(list.hidden){
+            list.hidden = false;
+            }else{
+            list.hidden = true;
+            }
+        }
+        );
+    }
+
+    function createItem(item){
+        if(item.url){
+            divItem = document.createElement("div");
+            divItem.className = "item no-select";
+            divItem.onclick = () => location.href = item.url;
+            divItem.innerHTML = item.name;
+            return divItem;
+        }
+    }
+</script>
+
+<script>
+    for(list of lists)
+        createListGroup(list.tittleId, list.listId);
+
+    projectList = document.getElementById("project_list");
+    for ( project of allProjects ){
+        ref = createItem(projects[project]);
+        if(ref)
+        projectList.appendChild(ref);
+    }
+</script>
