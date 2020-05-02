@@ -1,4 +1,4 @@
-<html>
+<!--html>
 
   <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
@@ -68,87 +68,6 @@
 </script>
 
 <script type="text/javascript">
-  function createListGroup(headerId, listId) {
-    document.getElementById(headerId).addEventListener(
-      "click",
-      function(event){
-        list = document.getElementById(listId);
-
-        if(list.hidden){
-          list.hidden = false;
-        }else{
-          list.hidden = true;
-        }
-      }
-    );
-  }
-  function createCard(project){
-    if(project.name && project.img && project.url && project.description)
-      return undefined;
-
-    card = document.createElement("div");
-    card.className = "card";
-
-    tittle = document.createElement("div");
-    tittle.className = "card-header";
-    tittle.innerHTML = project.name;
-    imgContent = document.createElement("div");
-    imgContent.className = "card-image";
-    img = document.createElement("img");
-    img.src = project["img-src"];
-    imgContent.appendChild(img);
-    description = document.createElement("div");
-    description.className = "card-description";
-    description.innerHTML = `<p>${project.description}</p>`;
-    card.appendChild(tittle);
-    card.appendChild(imgContent);
-    card.appendChild(description);
-    card.onclick = () => location.href = project.url;
-    return card;
-  }
-  function createLittleCard(project){
-    if(project.name){
-      littleCard = document.createElement("div");
-      littleCard.className = "little-card";
-      littleCard.innerHTML = project.name;
-      tittle = document.createElement("div");
-      tittle.className = "little-card-tittle";
-      littleCard.appendChild(tittle);
-      if(project.description){
-        description = document.createElement("div");
-        description.className = "little-card-description";
-        description.innerHTML = project.description;
-        littleCard.appendChild(description);
-      }
-      return littleCard;
-    }
-  }
-  function createLabel(project){
-    if(project.name){
-      label = document.createElement("div");
-      label.className = "label";
-      label.innerHTML = project.name;
-      tittle = document.createElement("div");
-      tittle.className = "label-tittle";
-      label.appendChild(tittle);
-      if(project.description){
-        description = document.createElement("div");
-        description.className = "label-description";
-        description.innerHTML = project.description;
-        label.appendChild(description);
-      }
-      return label;
-    }
-  }
-  function createItem(item){
-    if(item.url){
-      divItem = document.createElement("div");
-      divItem.className = "item no-select";
-      divItem.onclick = () => location.href = item.url;
-      divItem.innerHTML = item.name;
-      return divItem;
-    }
-  }
 </script>
 
 <script type="text/javascript">
@@ -188,4 +107,17 @@
     if(card)
       inMaintenance.appendChild(card);
   }
-</script>
+</script-->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="text/javascript" src="./src/inf/projects.js"></script>
+    <script type="text/javascript" src="./src/inf/inPlanning.js"></script>
+    <script type="text/javascript" src="./src/inf/workInProgress.js"></script>
+    <script type="text/javascript" src="./src/inf/inMaintenance.js"></script>
+    <script type="text/javascript" src="./src/elements.js"></script>
+    <script type="text/javascript" src="./src/general-page.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+  </head>
+</html>

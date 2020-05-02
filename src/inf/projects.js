@@ -5,7 +5,7 @@ const projects = {
         "img-src": "./assets/images/home-page.logo.png",
         "objectives": "",
         "date": "",
-        "url": "C:/Users/Edith/Documents/Projects/home-page/home-page/home-page/index.html"
+        "url": "https://mnza-na.github.io/home-page/about/index.html"
     },
     "router": {
         "name": "Router",
