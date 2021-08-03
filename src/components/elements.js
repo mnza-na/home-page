@@ -17,29 +17,7 @@
     - Label
 */
 
-function createBody(){
-    return document.createElement('body');
-};
 
-function createDiv(){
-    return document.createElement('div');
-};
-
-function createH4(){
-    return document.createElement('h4');
-};
-
-function createPageBar(){
-    const pb = createDiv();
-    pb.className = 'head bar';
-    return pb;
-};
-
-function createPageContainer(){
-    const pc = createDiv();
-    pc.className = 'content';
-    return pc;
-};
 
 /**
  * This function add a event to open a list when press a item.

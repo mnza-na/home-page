@@ -1,0 +1,9 @@
+.content{
+    background-color: var(--pallete-color-3);
+
+    height: 100%;
+    width: 80%;
+    
+    text-align: center;
+    overflow: auto;
+}

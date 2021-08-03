@@ -1,0 +1,19 @@
+.button {
+    display: flex;
+    background-color: var(--pallete-color-1);
+    color: var(--font-pallete-color-1);
+    
+    padding: 4px;
+    margin: 5px;
+
+    height: min-content;
+    width: min-content;
+
+    border-radius: 4px;
+
+    justify-content: center;
+    align-items: center;
+}
+.button:hover {
+    background-color: var(--pallete-color-5);
+}

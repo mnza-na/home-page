@@ -1,7 +1,14 @@
 const body = createBody();
-const pageBar = createPageBar();
-const pageContainer = createPageContainer();
-const container = createContainer();
+
+
+const viewContainer = ViewContainer();
+const sidenave = Toolbar();
+
+body.appendChild(sidenave);
+body.appendChild(viewContainer);
+
+/*
+
 
 const menu_btn = createMenuBtn();
 const menu_list = createMenuList(menu_btn);
@@ -26,3 +33,4 @@ pageContainer.appendChild(container);
 
 body.appendChild(pageBar);
 body.appendChild(pageContainer);
+*/
