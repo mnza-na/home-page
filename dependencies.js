@@ -15,10 +15,11 @@ function createDiv(){
     return document.createElement('div');
 };
 
-function createH4(){
-    return document.createElement('h4');
-};
-
 function createImg(){
     return document.createElement('img');
 }
+
+function createHeader(n){
+    return document.createElement(`h${n}`);
+};
+

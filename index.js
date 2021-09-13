@@ -1,2 +1,5 @@
+var language = (window.navigator.userLanguage || window.navigator.language);
 
-window.onload = () => document.body = body;
+window.onload = async () => {
+    document.body = await root()
+};

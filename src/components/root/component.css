@@ -10,6 +10,7 @@
 
     --pallete-color-8: #ffc39c;
     --pallete-color-9: #e0e0e0;
+    --pallete-color-10: #4e4e4e;
 
     --font-pallete-color-1: #ffffff;
     --font-pallete-color-2: #000000;
@@ -214,4 +215,15 @@ img.card-image{
 
 .label-description{
     font-size: 9px;
+}
+
+.title{
+    font-size: 30px;
+    color: var(--pallete-color-10);
+    font-family: "adobe-caslon-pro", Sans-serif;
+}
+.paragraph{
+    font-size: 20px;
+    color: var(--pallete-color-7);
+    font-family: 'adobe-caslon-pro'
 }

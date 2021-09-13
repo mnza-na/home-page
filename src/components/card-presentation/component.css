@@ -1,0 +1,9 @@
+.contact-card {
+    border-radius: 20px;
+    border-color: var(--pallete-color-7);
+    border: 4px;
+    background-color: var(--pallete-color-8);
+    margin: 10px;
+    padding: 10px;
+    height: max-content;
+}

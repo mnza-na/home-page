@@ -3,5 +3,8 @@
 @import './components/view-container/component.css';
 @import './components/button/component.css';
 @import './components/image-container-circle/component.css';
+@import './components/card-presentation/component.css';
+@import './components/divisor-vertical/component.css';
+@import './components/text-box/component.css';
 
 @import './components/root/component.css';
