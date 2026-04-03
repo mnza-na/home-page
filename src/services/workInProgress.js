@@ -1,3 +1,0 @@
-const workInProgress = [
-    "home-page"
-]
