@@ -13,12 +13,6 @@ import { HeadPage } from './head-page/head-page'
 export class App {
   protected readonly title = signal('Home Page');
   protected readonly projects = [
-    { title: 'Project A', link: 'https://angular.dev', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project B', link: 'https://angular.dev/tutorials', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project C', link: 'https://angular.dev/ai/develop-with-ai', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project C', link: 'https://angular.dev/ai/develop-with-ai', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project C', link: 'https://angular.dev/ai/develop-with-ai', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project C', link: 'https://angular.dev/ai/develop-with-ai', short_description: 'texto 1 chiquieto y cortito' },
-    { title: 'Project C', link: 'https://angular.dev/ai/develop-with-ai', short_description: 'texto 1 chiquieto y cortito' },
+    { title: 'Home Page', link: 'https://github.com/mnza-na/home-page', short_description: 'Carta de presentacion a mis proyectos' },
   ]
 }
