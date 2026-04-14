@@ -9,7 +9,7 @@
     <div class="project-side">
       <app-mini-box-container [title]="'Mis proyectos'">
         @for (project of projects; track project.title) {
-          <app-mini-box [name]="project.title" [link]="project.link" [content]="project.short_description"></app-mini-box>
+          <app-mini-box [name]="project.title" [link]="project.link" [content]="project.short_description" [icon]="project.icon"></app-mini-box>
         }
       </app-mini-box-container>
     </div>
