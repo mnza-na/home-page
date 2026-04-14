@@ -13,6 +13,6 @@ import { HeadPage } from './head-page/head-page'
 export class App {
   protected readonly title = signal('Home Page');
   protected readonly projects = [
-    { title: 'Home Page', link: 'https://github.com/mnza-na/home-page', short_description: 'Carta de presentacion a mis proyectos' },
+    { title: 'Home Page', link: 'https://github.com/mnza-na/home-page', short_description: 'Carta de presentacion a mis proyectos', icon: 'logo-1.svg'},
   ]
 }
