@@ -1,5 +1,7 @@
-<div class="box" href="this.link">
-    <img [src]="this.icon" height="50%" width="50%">
+<div class="box" (click)="this.goToLink()">
+    <div class="icon_box">
+        <img [src]="this.icon" height="50%" width="50%">
+    </div>
     <div class="title-box">
         <a [href]="this.link">{{this.name}}</a>
     </div>

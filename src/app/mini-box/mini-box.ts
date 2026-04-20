@@ -11,4 +11,8 @@ export class MiniBox {
   @Input() link: string = '';
   @Input() content: string = '';
   @Input() icon: string = '';
+
+  goToLink() {
+    window.location.href = this.link;
+  }
 }
