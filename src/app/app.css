@@ -1,10 +1,94 @@
-main {
+/* contenedor principal */
+.main {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #1f1f1f 0%, #121212 100%);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* contenido central */
+.content {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* texto */
 p {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 50vw;
+    max-width: 700px;
+    line-height: 1.6;
+    color: #b5b5b5;
+}
+
+/* separador */
+.divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 229, 255, 0.4),
+        transparent
+    );
+    margin: 10px 0;
+}
+
+/* sección proyectos */
+.project-side {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* contenedor de mini boxes (por si el componente no lo maneja) */
+app-mini-box-container {
+    width: 100%;
+}
+
+/* layout interno de las cards */
+app-mini-box-container > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* animación suave de entrada */
+.content > * {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.content > *:nth-child(1) { animation-delay: 0.1s; }
+.content > *:nth-child(2) { animation-delay: 0.2s; }
+.content > *:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .main {
+        padding: 20px 10px;
+    }
+
+    p {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
 }
